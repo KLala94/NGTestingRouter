@@ -20,7 +20,7 @@ fdescribe('Router: App', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule.withRoutes(appRoutes)],
+      imports: [RouterTestingModule.withRoutes([{path: 'home', component: HomeComponent}])],
       declarations: [
         AppComponent,
         HomeComponent,
@@ -37,17 +37,6 @@ fdescribe('Router: App', () => {
     fixture = TestBed.createComponent(AppComponent);
     router.initialNavigation();
   });
-  // xit('navigate to "Home" takes you to /home', fakeAsync(() => {
-  //   router.navigate(['home']);
-  //   tick();
-  //   expect(location.path()).toBe('/home');
-  // }));
-  // xit('navigate to "work" takes you to /work', fakeAsync(() => {
-  //   router.navigate(['work']);
-  //   tick();
-  //   expect(location.path()).toBe('/work');
-  // }));
-// });
 beforeEach(fakeAsync(() => {
   router = TestBed.get(Router);
   location = TestBed.get(Location);

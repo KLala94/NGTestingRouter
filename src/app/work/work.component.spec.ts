@@ -9,7 +9,7 @@ import { WorkRoutingModule, workRoutes } from './work-routing.module';
 import {Location} from "@angular/common";
 import {fakeAsync, tick} from '@angular/core/testing';
 import {Router} from "@angular/router";
-fdescribe('Router: App', () => {
+fdescribe('Router: ChildrenApp', () => {
 
   let location: Location;
   let router: Router;
