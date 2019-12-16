@@ -6,11 +6,12 @@ import { WorkComponent } from './work/work.component';
 import { BadWorkComponent } from './work/bad-work/bad-work.component';
 import { GoodWorkComponent } from './work/good-work/good-work.component';
 import { AppRoutingModule, appRoutes } from './app-routing.module';
-import {Location} from "@angular/common";
+import {Location} from '@angular/common';
 import {fakeAsync, tick, flush} from '@angular/core/testing';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 import { from } from 'rxjs';
 import { By } from '@angular/platform-browser';
+import { WorkingComponent } from './working/working.component';
 fdescribe('Router: App', () => {
 
   let location: Location;
@@ -25,7 +26,8 @@ fdescribe('Router: App', () => {
         HomeComponent,
         WorkComponent,
         BadWorkComponent,
-        GoodWorkComponent
+        GoodWorkComponent,
+        WorkingComponent
       ]
     });
 
@@ -46,23 +48,23 @@ fdescribe('Router: App', () => {
   //   expect(location.path()).toBe('/work');
   // }));
 // });
-beforeEach(fakeAsync(() => { // #D
-  router = TestBed.get(Router); // #D
-  location = TestBed.get(Location); // #D
-  fixture = TestBed.createComponent(AppComponent); // #D
-  router.navigateByUrl('/'); // #D
-  advance(); // #D
-})); // #D
+beforeEach(fakeAsync(() => {
+  router = TestBed.get(Router);
+  location = TestBed.get(Location);
+  fixture = TestBed.createComponent(AppComponent);
+  router.navigateByUrl('/');
+  advance();
+}));
 
 function advance(): void {
   flush();
   fixture.detectChanges();
 }
 
-it('Tries to route to a page', fakeAsync(() => { // #A
-  const menu = fixture.debugElement.query(By.css('a')); // #A
-  menu.triggerEventHandler('click', { button: 0 }); // #A
-  advance(); // #A
-  expect(location.path()).toEqual('/home'); // #A
-})); // #A
+it('Tries to route to a page', fakeAsync(() => {
+  const menu = fixture.debugElement.query(By.css('a'));
+  menu.triggerEventHandler('click', { button: 0 });
+  advance();
+  expect(location.path()).toEqual('/home');
+}));
 });
