@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, flush } from '@angular/core/testing';
+import { fakeAsync, ComponentFixture, TestBed, flush } from '@angular/core/testing';
 
 import { GoodWorkComponent } from './good-work/good-work.component';
 import { BadWorkComponent }  from './bad-work/bad-work.component';
@@ -7,7 +7,7 @@ import { WorkComponent } from './work.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { WorkRoutingModule, workRoutes } from './work-routing.module';
 import {Location} from '@angular/common';
-import {fakeAsync, tick} from '@angular/core/testing';
+
 import {Router} from '@angular/router';
 import { AppComponent } from '../app.component';
 import { By } from '@angular/platform-browser';
